@@ -59,11 +59,20 @@ header{
     transition:0.5s;
 }
 
-
+.bg-gray{
+    background:var(--light-grey);
+}
 
 .hamburger{
     right:.7em;
     cursor:pointer;
+}
+.hidden-mobile{
+    display:none;
+}
+
+.circle{
+    border-radius:50%;
 }
 
 .hamburger::after{
@@ -107,6 +116,10 @@ header{
     }
     .side-nav li{
         display: inline-block;
+    }
+
+    .hidden-mobile{
+        display: inline;
     }
 }
 
