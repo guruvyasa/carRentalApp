@@ -1,1 +1,4 @@
-assets
+/assets/*/*
+/assets/*/*
+!/assets/css/*
+

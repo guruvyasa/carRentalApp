@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,800&display=swap');
+:root{
+    --bg-black:#000000;
+    --light-grey:#222222;
+    --yellow:#fec601;
+}
+
+.text-lightyellow{
+    color:var(--yellow) !important;
+}
+*,ul{
+    padding:0;
+    margin:0;
+}
+body{
+    background-color:var(--bg-black);
+    font-family: Montserrat;
+}
+
+header{
+    position:relative;
+
+}
+
+.side-nav{
+    background-color:var(--light-grey);
+    list-style: none;
+    position:absolute;
+    right:-1000px;
+    transition:.14s;
+
+    /* transform: scale(0,1); */
+    top:100%;
+}
+
+.navigation ul a{
+    text-decoration: none;
+    display:block;
+    padding:3em 5em .5em 1em;
+    text-transform: uppercase;
+    color:#fec601;
+}
+
+#chk{
+    display: none;
+}
+
+.hamburger::before,
+.hamburger::after,
+.hamburger{
+    content:"";
+    background:white;
+    position: absolute;
+    height:5px;
+    border-radius:3px;
+    width:35px;
+    display: block;
+    top:50%;
+    transition:0.5s;
+}
+
+
+
+.hamburger{
+    right:.7em;
+    cursor:pointer;
+}
+
+.hamburger::after{
+    transform:translateY(10px);
+}
+
+.hamburger::before{
+    transform:translateY(-15px);
+}
+
+#chk:checked ~ .hamburger{
+    transform:rotate(45deg);
+}
+
+
+#chk:checked ~ .hamburger::before{
+    transform:rotate(-88deg);
+}
+#chk:checked ~ .hamburger::after{
+    display:none;
+}
+
+#chk:checked ~ .side-nav{
+    right:-10px;
+    /* transform: scale(1,1);     */
+    transition:.5s;
+}
+
+@media(min-width:700px){
+    .hamburger{
+        display: none;
+    }
+    .navigation ul a{
+        display: inline-block;
+        padding:1em;
+    }
+    .side-nav{
+        right:10px;
+        top:0;
+        background:var(--bg-black);
+    }
+    .side-nav li{
+        display: inline-block;
+    }
+}
+
+
